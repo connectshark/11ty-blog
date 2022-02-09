@@ -30,7 +30,7 @@ templateEngineOverride: md, njk
 <header class="tdbc-hero">
   <div class="tdbc-container">
     <span class="logo">
-      <img src="/hero.png" alt="">
+      <img src="/assets/hero.png" alt="hero-img">
     </span>
     <h1 class="tdbc-ink--primary tdbc-mb-none">{{ meta.siteName }}</h1>
     <h2 class="tdbc-lead tdbc-content-maxlength tdbc-ink--gray tdbc-mt-md tdbc-mx-auto">
@@ -41,7 +41,7 @@ templateEngineOverride: md, njk
 <main class="tdbc-container">
   <div class="tdbc-section">
     <ul class="tdbc-column-container">
-      {%- for page in collections.pages -%}
+      {%- for page in collections.post -%}
       <li class="tdbc-card">
         <div class="tdbc-card__content">
           <a href="{{ page.url }}" class="tdbc-card__title">{{ page.data.title }}</a>
