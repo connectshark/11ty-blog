@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#menu:checked ~ ul.nav {
+  @apply block;
+}
+#menu:checked ~ label .menu-icon {
+  @apply hidden;
+}
+#menu:checked ~ label .false-icon {
+  @apply inline-block;
+}

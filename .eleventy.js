@@ -1,64 +1,47 @@
-// 11ty Plugins
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-
-// Helper packages
-const slugify = require("slugify");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const pluginNavigation = require("@11ty/eleventy-navigation");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const slugify = require("slugify");
+const pluginTOC = require('eleventy-plugin-toc')
+const now = String(Date.now())
+module.exports = eleventyConfig => {
+  eleventyConfig.addWatchTarget('src/css/**.css')
+  eleventyConfig.addShortcode('version', function () {
+    return now
+  })
+  eleventyConfig.addPassthroughCopy('src/assets')
+  eleventyConfig.addPassthroughCopy('src/css/menu.css')
 
-// Local utilities/data
-const packageVersion = require("./package.json").version;
-
-module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(pluginNavigation);
   eleventyConfig.addPlugin(pluginRss);
-
-  eleventyConfig.addWatchTarget("./src/sass/");
-
-  eleventyConfig.addPassthroughCopy("./src/css");
-  eleventyConfig.addPassthroughCopy("./src/fonts");
-  eleventyConfig.addPassthroughCopy("./src/assets")
-
-  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
-  eleventyConfig.addShortcode("packageVersion", () => `v${packageVersion}`);
-
-  eleventyConfig.addFilter("slug", (str) => {
-    if (!str) {
-      return;
-    }
-
-    return slugify(str, {
-      lower: true,
-      strict: true,
-      remove: /["]/g,
-    });
-  });
-
-  /* Markdown Overrides */
-  let markdownLibrary = markdownIt({
+  eleventyConfig.addPlugin(pluginSyntaxHighlight);
+  eleventyConfig.addPlugin(pluginTOC)
+  eleventyConfig.setLibrary("md", markdownIt({
     html: true,
+    breaks: true,
+    linkify: true
   }).use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
-      class: "tdbc-anchor",
+      placement: "before",
+      class: "direct-link",
       space: false,
+      level: [2,3,4],
+      slugify: (str) =>
+        slugify(str, {
+          lower: true,
+          strict: true,
+          remove: /["]/g,
+        })
     }),
-    level: [1, 2, 3],
-    slugify: (str) =>
-      slugify(str, {
-        lower: true,
-        strict: true,
-        remove: /["]/g,
-      }),
-  });
-  eleventyConfig.setLibrary("md", markdownLibrary);
-
+    slugify: eleventyConfig.getFilter("slug")
+  }));
   return {
-    passthroughFileCopy: true,
     dir: {
-      input: "src",
-      output: "dist",
-      layouts: "_layouts",
+      input: 'src',
+      output: 'dist'
     },
-  };
-};
+    markdownTemplateEngine: 'njk'
+  }
+}
