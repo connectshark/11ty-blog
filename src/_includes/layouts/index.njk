@@ -9,11 +9,26 @@
   <title>{{ title }} | {{ site.name }}</title>
 </head>
 <body class=" font-mono bg-slate-50 min-h-screen text-gray-900">
-  {% include 'components/header.njk' %}
+  <header class=" p-10">
+    <div class=" relative">
+      <h1 class=" absolute -z-10 invisible">{{ site.name }}</h1>
+      <figure>
+        <img class=" mx-auto max-w-xs w-full" src="/assets/hero.jpg" alt="{{ site.name }}">
+      </figure>
+    </div>
+  </header>
+  <nav class=" p-10">
+    <ul class=" text-center">
+      {%- for item in category -%}
+      <a class=" hover:text-amber-400 inline-block mx-4"
+        href="{{ item.url }}"
+      >
+        <li>{{ item.name }}</li>
+      </a>
+      {%- endfor -%}
+    </ul>
+  </nav>
   <main>
-  <aside>
-    {{ content | toc | safe }}
-  </aside>
     {{ content | safe }}
   </main>
   {% include 'components/footer.njk' %}
