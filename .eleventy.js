@@ -1,11 +1,12 @@
-const markdownIt = require("markdown-it");
+const markdownIt = require('markdown-it')
 const markdownItp = require('markdown-it')()
-const markdownItAnchor = require("markdown-it-anchor");
+const markdownItAnchor = require('markdown-it-anchor')
 const markdownItContainer = require('markdown-it-container')
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const slugify = require("slugify");
+const markdownItTableOfContents = require("markdown-it-table-of-contents")
+const pluginNavigation = require('@11ty/eleventy-navigation')
+const pluginRss = require('@11ty/eleventy-plugin-rss')
+const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
+const slugify = require('slugify')
 const now = String(Date.now())
 module.exports = eleventyConfig => {
   eleventyConfig.addWatchTarget('src/css/**.css')
@@ -31,7 +32,7 @@ module.exports = eleventyConfig => {
     breaks: true,
     linkify: true
   })
-  .use(require("markdown-it-table-of-contents"))
+  .use(markdownItTableOfContents)
   .use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
       placement: "before",

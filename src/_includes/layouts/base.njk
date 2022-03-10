@@ -8,9 +8,9 @@
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   <title>{{ title }} | {{ site.name }}</title>
 </head>
-<body class=" font-mono bg-slate-50 min-h-screen text-gray-900">
+<body class=" font-mono bg-slate-50 min-h-screen text-gray-700 text-base">
   {% include 'components/header.njk' %}
-  <main>
+  <main class=" container mx-auto p-6">
     {{ content | safe }}
   </main>
   {% include 'components/footer.njk' %}
