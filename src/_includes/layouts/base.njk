@@ -11,9 +11,6 @@
 <body class=" font-mono bg-slate-50 min-h-screen text-gray-900">
   {% include 'components/header.njk' %}
   <main>
-  <aside>
-    {{ content | toc | safe }}
-  </aside>
     {{ content | safe }}
   </main>
   {% include 'components/footer.njk' %}
