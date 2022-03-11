@@ -8,6 +8,8 @@ const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const slugify = require('slugify')
 const now = String(Date.now())
+const tagController = require('./src/_11ty/getTagList')
+
 module.exports = eleventyConfig => {
   eleventyConfig.addWatchTarget('src/css/**.css')
 
@@ -26,6 +28,8 @@ module.exports = eleventyConfig => {
   eleventyConfig.addPlugin(pluginNavigation)
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(pluginSyntaxHighlight)
+
+  eleventyConfig.addCollection("tagList", tagController);
 
   let markdownLibrary = markdownIt({
     html: true,

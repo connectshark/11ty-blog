@@ -1,0 +1,8 @@
+
+<p>標籤</p>
+<p>
+  {% for tag in collections.tagList %}
+  {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+  <a class=" mb-1 inline-block p-1 text-sm bg-sky-500 text-white rounded-lg no-underline" href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+  {% endfor %}
+</p>
