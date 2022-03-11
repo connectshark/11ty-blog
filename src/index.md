@@ -3,7 +3,7 @@ title: 首頁
 layout: 'layouts/index.njk'
 pagination:
   data: collections.post
-  size: 3
+  size: 2
   alias: posts_set
 ---
 <ul class=" p-0 list-none rounded-xl bg-white">
@@ -13,7 +13,7 @@ pagination:
       {%- if page.data.cover -%}
       <figure class=" shrink-0 w-full lg:w-80">
         <a href="{{ page.url }}">
-          <img loading="lazy" class=" rounded-xl object-cover" src="{{ page.data.cover }}" alt="{{ page.title }}">
+          <img loading="lazy" class=" mx-auto rounded-xl object-cover" src="{{ page.data.cover }}" alt="{{ page.title }}">
         </a>
       </figure>
       {%- endif -%}

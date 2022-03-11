@@ -5,7 +5,7 @@ description: 小資族理財大全
 eleventyExcludeFromCollections: true
 pagination:
   data: collections.financial
-  size: 3
+  size: 2
   alias: posts_set
 ---
 
@@ -29,4 +29,38 @@ pagination:
     </article>
   </li>
   {%- endfor -%}
+</ul>
+
+<ul class=" p-0 list-none text-center">
+{%- if pagination.href.first -%}
+  <li class=" inline-block mx-2">
+    <a class="block p-2 border rounded-lg bg-white no-underline hover:text-amber-400 hover:underline" href="{{ pagination.href.first | url }}"><i class='bx bxs-arrow-to-right bx-rotate-180' ></i></a>
+  </li>
+  {%- endif -%}
+{%- if pagination.href.previous -%}
+  <li class=" inline-block mx-2">
+    <a class="block p-2 border rounded-lg bg-white no-underline hover:text-amber-400 hover:underline" href="{{ pagination.href.previous | url }}"><i class='bx bxs-chevron-right bx-rotate-180' ></i></a>
+  </li>
+  {%- endif -%}
+  {%- set page_index = 1 -%}
+  {%- for page in pagination.hrefs -%}
+  <li class=" inline-block mx-2">
+  <a class="block p-2 border rounded-lg bg-white no-underline hover:text-amber-400 hover:underline" href="{{ page }}">{{ page_index }}</a>
+  </li>
+  {%- set page_index = page_index + 1 -%}
+  {%- endfor -%}
+{%- if pagination.href.next -%}
+  <li class=" inline-block mx-2">
+    <a class="block p-2 border rounded-lg bg-white no-underline hover:text-amber-400 hover:underline" href="{{ pagination.href.next | url }}">
+      <i class='bx bxs-chevron-right'></i>
+    </a>
+  </li>
+  {%- endif -%}
+{%- if pagination.href.last -%}
+  <li class=" inline-block mx-2">
+    <a class="block p-2 border rounded-lg bg-white no-underline hover:text-amber-400 hover:underline" href="{{ pagination.href.last | url }}">
+      <i class='bx bxs-arrow-to-right' ></i>
+    </a>
+  </li>
+  {%- endif -%}
 </ul>
