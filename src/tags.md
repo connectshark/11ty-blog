@@ -1,8 +1,16 @@
 ---
-title: 標籤雲
 layout: 'layouts/base.njk'
-tags:
-  - post
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag }}/
 ---
+<h1>Tagged “{{ tag }}”</h1>
 
-# tags
+<ol>
+{% set taglist = collections[ tag ] %}
+{% for post in taglist | reverse %}
+  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
+{% endfor %}
+</ol>

@@ -10,5 +10,9 @@
   {
     "name": "小資好物",
     "url": "/product"
+  },
+  {
+    "name": "標籤",
+    "url": "/tags"
   }
 ]
