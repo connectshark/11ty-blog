@@ -3,11 +3,10 @@ title: 首頁
 layout: 'layouts/index.njk'
 pagination:
   data: collections.post
-  size: 2
+  size: 3
   alias: posts_set
 ---
-
-<ul class=" p-0 list-none">
+<ul class=" p-0 list-none rounded-xl bg-white">
   {%- for page in posts_set -%}
   <li>
     <article class="p-6 rounded-lg bg-white my-4 flex items-start flex-wrap lg:flex-nowrap justify-between">
@@ -33,31 +32,33 @@ pagination:
 <ul class=" p-0 list-none text-center">
 {%- if pagination.href.first -%}
   <li class=" inline-block mx-2">
-    <a class="no-underline hover:text-amber-400 hover:underline" href="{{ pagination.href.first | url }}">First</a>
+    <a class="block p-2 border rounded-lg bg-white no-underline hover:text-amber-400 hover:underline" href="{{ pagination.href.first | url }}"><i class='bx bxs-arrow-to-right bx-rotate-180' ></i></a>
   </li>
   {%- endif -%}
 {%- if pagination.href.previous -%}
   <li class=" inline-block mx-2">
-    <a class="no-underline hover:text-amber-400 hover:underline" href="{{ pagination.href.previous | url }}"><i class='bx bxs-chevron-right bx-rotate-180' ></i></a>
+    <a class="block p-2 border rounded-lg bg-white no-underline hover:text-amber-400 hover:underline" href="{{ pagination.href.previous | url }}"><i class='bx bxs-chevron-right bx-rotate-180' ></i></a>
   </li>
   {%- endif -%}
   {%- set page_index = 1 -%}
   {%- for page in pagination.hrefs -%}
   <li class=" inline-block mx-2">
-  <a class="no-underline hover:text-amber-400 hover:underline" href="{{ page }}">{{ page_index }}</a>
+  <a class="block p-2 border rounded-lg bg-white no-underline hover:text-amber-400 hover:underline" href="{{ page }}">{{ page_index }}</a>
   </li>
   {%- set page_index = page_index + 1 -%}
   {%- endfor -%}
 {%- if pagination.href.next -%}
   <li class=" inline-block mx-2">
-    <a class="no-underline hover:text-amber-400 hover:underline" href="{{ pagination.href.next | url }}">
-      <i class='bx bxs-chevron-right align-middle'></i>
+    <a class="block p-2 border rounded-lg bg-white no-underline hover:text-amber-400 hover:underline" href="{{ pagination.href.next | url }}">
+      <i class='bx bxs-chevron-right'></i>
     </a>
   </li>
   {%- endif -%}
 {%- if pagination.href.last -%}
   <li class=" inline-block mx-2">
-    <a class="no-underline hover:text-amber-400 hover:underline" href="{{ pagination.href.last | url }}">Last</a>
+    <a class="block p-2 border rounded-lg bg-white no-underline hover:text-amber-400 hover:underline" href="{{ pagination.href.last | url }}">
+      <i class='bx bxs-arrow-to-right' ></i>
+    </a>
   </li>
   {%- endif -%}
 </ul>

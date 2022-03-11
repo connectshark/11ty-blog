@@ -21,10 +21,10 @@ module.exports = eleventyConfig => {
   })
 
   eleventyConfig.addPassthroughCopy('src/assets')
-  eleventyConfig.addPassthroughCopy('src/css/menu.css')
+  eleventyConfig.addPassthroughCopy({ 'public/' : '.' })
 
-  eleventyConfig.addPlugin(pluginNavigation);
-  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(pluginNavigation)
+  eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(pluginSyntaxHighlight)
 
   let markdownLibrary = markdownIt({

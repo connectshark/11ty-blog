@@ -1,0 +1,25 @@
+{% if description %}
+  {% set metaDesc = description %}
+{% endif %}
+{% if not description %}
+  {% set metaDesc = site.description %}
+{% endif %}
+{% if cover %}
+  {% set metaImage = cover %}
+{% endif %}
+{% if not cover %}
+  {% set metaImage = site.cover %}
+{% endif %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+  <meta property="og:site_name" content="{{ site.name }}" />
+  <meta property="og:title" content="{{ title }} | {{ site.name }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta name="description" content="{{ metaDesc }}" />
+  <meta name="twitter:description" content="{{ metaDesc }}" />
+  <meta property="og:description" content="{{ metaDesc }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="{{ metaImage }}" />
+  <meta name="twitter:image" content="{{ metaImage }}" />
+  <meta property="og:image:alt" content="Page image for {{ site.name }}" />
+  <meta name="twitter:image:alt" content="Page image for {{ site.name }}" />

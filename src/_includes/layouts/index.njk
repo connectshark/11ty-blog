@@ -7,6 +7,7 @@
   <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  {% include 'components/meta-info.njk' %}
   <title>{{ title }} | {{ site.name }}</title>
 </head>
 <body class=" font-mono bg-slate-50 min-h-screen text-gray-900 text-base lg:text-xl">
@@ -23,31 +24,26 @@
   <nav class=" p-10">
     <ul class=" text-center pl-0 list-none">
       {%- for item in category -%}
-      <a class=" hover:text-amber-400 no-underline hover:underline inline-block mx-4"
-        href="{{ item.url }}"
-      >
-        <li>{{ item.name }}</li>
-      </a>
+      <li class=" inline-block mx-4">
+        <a class=" hover:text-amber-400 no-underline hover:underline"
+          href="{{ item.url }}"
+        >{{ item.name }}</a>
+      </li>
       {%- endfor -%}
     </ul>
   </nav>
   <main class=" bg-indigo-50">
-    <div class=" container mx-auto p-4">
-      {{ content | safe }}
-      <ul class=" p-0 list-none text-center">
-        <li class=" inline-block mx-2">
-          <a href="" class="no-underline hover:text-amber-400 hover:underline">First</a>
-        </li>
-        <li class=" inline-block mx-2">
-          <a href="" class="no-underline hover:text-amber-400 hover:underline">1</a>
-        </li>
-        <li class=" inline-block mx-2">
-          <a href="" class="no-underline hover:text-amber-400 hover:underline">2</a>
-        </li>
-        <li class=" inline-block mx-2">
-          <a href="" class="no-underline hover:text-amber-400 hover:underline">end</a>
-        </li>
-      </ul>
+    <div class=" container mx-auto grid-cols-1 p-4 grid lg:grid-cols-4 gap-4 lg:gap-8">
+      <div class=" lg:col-start-1 lg:col-span-3">
+        {{ content | safe }}
+      </div>
+      <aside class="lg:col-start-4 lg:col-span-1">
+        <ul class=" list-none p-4  rounded-xl bg-white">
+          <li class=" p-4 mb-4">
+            {% include 'components/fb.njk' %}
+          </li>
+        </ul>
+      </aside>
     </div>
   </main>
   {% include 'components/footer.njk' %}

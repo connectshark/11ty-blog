@@ -1,7 +1,32 @@
 ---
 title: 小資理財
-description: 大部分的人可能都會想說休息一下就好，但如果變成長期疼痛，可能就會嚴重到要去骨科或復健科檢查，但是醫生常常都是給止痛藥或肌肉鬆弛劑，其實都沒有對根源改善
-tags:
-  - post
+layout: layouts/index.njk
+description: 小資族理財大全
+eleventyExcludeFromCollections: true
+pagination:
+  data: collections.financial
+  size: 3
+  alias: posts_set
 ---
-# {{ title }}
+
+<ul class=" p-0 list-none rounded-xl bg-white">
+  {%- for page in posts_set -%}
+  <li>
+    <article class="p-6 rounded-lg bg-white my-4 flex items-start flex-wrap lg:flex-nowrap justify-between">
+      {%- if page.data.cover -%}
+      <figure class=" shrink-0 w-full lg:w-80">
+        <a href="{{ page.url }}">
+          <img loading="lazy" class=" rounded-xl object-cover" src="{{ page.data.cover }}" alt="{{ page.title }}">
+        </a>
+      </figure>
+      {%- endif -%}
+      <div class=" px-4">
+        <h2 class=" text-2xl">
+          <a class=" no-underline hover:underline hover:text-amber-400" href="{{ page.url }}">{{ page.data.title }}</a>
+        </h2>
+        <p>{{ page.data.description }}</p>
+      </div>
+    </article>
+  </li>
+  {%- endfor -%}
+</ul>

@@ -1,18 +1,18 @@
 [
   {
     "name": "小資理財",
-    "url": "/financial"
+    "url": "/financial/"
   },
   {
     "name": "小資美食",
-    "url": "/foods"
+    "url": "/foods/"
   },
   {
     "name": "小資好物",
-    "url": "/product"
+    "url": "/product/"
   },
   {
     "name": "標籤",
-    "url": "/tags"
+    "url": "/tags/"
   }
 ]
