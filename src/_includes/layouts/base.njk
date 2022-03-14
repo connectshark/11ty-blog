@@ -6,14 +6,19 @@
   <link rel="stylesheet" href="/css/index.css?v={% version %}"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon">
+  <meta name="google-site-verification" content="EeuHEvLF5IYkZGVxFdS09sIHcSZXBSudVq5B821z6nU">
   <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
   {% include 'components/meta-info.njk' %}
   <title>{{ title }} | {{ site.name }}</title>
 </head>
 <body class=" font-mono bg-slate-50 min-h-screen text-gray-700 text-base">
   {% include 'components/header.njk' %}
-  <main class=" container mx-auto p-6">
+  <main>
+  {% include 'components/page-title.njk' %}
+  
+  <div class=" container mx-auto p-6">
     {{ content | safe }}
+  </div>
   </main>
   {% include 'components/footer.njk' %}
 </body>

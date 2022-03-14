@@ -3,10 +3,11 @@ layout: 'layouts/index.njk'
 title: 標籤頁面
 pagination:
   data: collections
-  size: 2
+  size: 5
   alias: tag
 permalink: /tags/{{ tag }}/
 ---
+
 <h1>Tagged “{{ tag }}”</h1>
 
 <ol>

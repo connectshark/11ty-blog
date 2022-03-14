@@ -1,0 +1,9 @@
+<div class="bg-slate-700 p-5 text-white text-center">
+  <h1 class=" max-w-5xl mx-auto">{{ title }}</h1>
+</div>
+
+{% if cover %}
+<figure >
+  <img class="w-4/5 rounded-md max-w-xl mx-auto" src="{{cover}}" alt="{{title}}">
+</figure>
+{% endif %}

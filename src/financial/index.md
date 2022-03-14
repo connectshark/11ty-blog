@@ -5,7 +5,7 @@ description: 小資族理財大全
 eleventyExcludeFromCollections: true
 pagination:
   data: collections.financial
-  size: 2
+  size: 5
   alias: posts_set
 ---
 

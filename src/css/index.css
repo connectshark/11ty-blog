@@ -14,18 +14,18 @@
 
 @layer base {
   h1 {
-    @apply leading-loose lg:leading-loose text-5xl font-bold lg:text-6xl my-4;
+    @apply leading-loose lg:leading-loose text-4xl font-bold lg:text-5xl my-4;
   }
   h2 {
-    @apply text-4xl font-bold lg:text-5xl leading-relaxed lg:leading-relaxed my-4;
+    @apply text-3xl font-bold lg:text-4xl leading-relaxed lg:leading-relaxed my-4;
   }
 
   h3 {
-    @apply text-3xl font-bold lg:text-4xl leading-normal lg:leading-normal my-4;
+    @apply text-2xl font-bold lg:text-3xl leading-normal lg:leading-normal my-4;
   }
 
   h4 {
-    @apply text-2xl font-bold lg:text-3xl leading-snug lg:leading-snug my-4;
+    @apply text-xl font-bold lg:text-2xl leading-snug lg:leading-snug my-4;
   }
   a {
     @apply text-sky-700 underline hover:opacity-80 transition-opacity;

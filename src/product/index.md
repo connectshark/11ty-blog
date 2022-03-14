@@ -5,7 +5,7 @@ description: 小資族好物大全
 eleventyExcludeFromCollections: true
 pagination:
   data: collections.product
-  size: 2
+  size: 5
   alias: posts_set
 ---
 

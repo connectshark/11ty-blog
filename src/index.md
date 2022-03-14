@@ -3,7 +3,7 @@ title: 首頁
 layout: 'layouts/index.njk'
 pagination:
   data: collections.post
-  size: 2
+  size: 5
   alias: posts_set
 ---
 <ul class=" p-0 list-none rounded-xl bg-white">
@@ -21,7 +21,9 @@ pagination:
         <h2 class=" text-2xl">
           <a class=" no-underline hover:underline hover:text-amber-400" href="{{ page.url }}">{{ page.data.title }}</a>
         </h2>
-        <p>{{ page.data.description }}</p>
+        <p>
+          <a class=" no-underline text-inherit" href="{{ page.url }}">{{ page.data.description }}</a>
+        </p>
       </div>
     </article>
   </li>

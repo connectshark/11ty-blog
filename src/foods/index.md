@@ -5,7 +5,7 @@ description: 小資族美食大全
 eleventyExcludeFromCollections: true
 pagination:
   data: collections.foods
-  size: 2
+  size: 5
   alias: posts_set
 ---
 
