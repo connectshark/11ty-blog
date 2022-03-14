@@ -14,7 +14,7 @@
 
 @layer base {
   h1 {
-    @apply leading-loose lg:leading-loose text-4xl font-bold lg:text-5xl my-4;
+    @apply leading-loose text-4xl font-bold lg:text-5xl my-4;
   }
   h2 {
     @apply text-3xl font-bold lg:text-4xl leading-relaxed lg:leading-relaxed my-4;
