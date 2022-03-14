@@ -3,29 +3,28 @@ title: 首頁
 layout: 'layouts/index.njk'
 pagination:
   data: collections.post
-  size: 5
+  size: 6
   alias: posts_set
 ---
-<ul class=" p-0 list-none rounded-xl bg-white">
+<ul class=" p-4 mb-4 list-none rounded-xl bg-white grid lg:grid-cols-3 grid-cols-1 gap-4">
   {%- for page in posts_set -%}
-  <li>
-    <article class="p-6 rounded-lg bg-white my-4 flex items-start flex-wrap lg:flex-nowrap justify-between">
-      {%- if page.data.cover -%}
-      <figure class=" shrink-0 w-full lg:w-80">
-        <a href="{{ page.url }}">
-          <img loading="lazy" class=" mx-auto rounded-xl object-cover" src="{{ page.data.cover }}" alt="{{ page.title }}">
-        </a>
-      </figure>
-      {%- endif -%}
-      <div class=" px-4">
-        <h2 class=" text-2xl">
-          <a class=" no-underline hover:underline hover:text-amber-400" href="{{ page.url }}">{{ page.data.title }}</a>
-        </h2>
-        <p>
-          <a class=" no-underline text-inherit" href="{{ page.url }}">{{ page.data.description }}</a>
-        </p>
-      </div>
-    </article>
+  <li class=" group ">
+    <a href="{{ page.url }}" class="block no-underline text-inherit">
+      <article class="p-6 rounded-lg bg-white transition-colors group-hover:bg-amber-200 border group-hover:border-amber-200">
+        {%- if page.data.cover -%}
+        <figure>
+          <img loading="lazy" class=" w-full mx-auto rounded-xl object-cover" src="{{ page.data.cover }}" alt="{{ page.title }}">
+        </figure>
+        {%- endif -%}
+        <div class=" px-4">
+          <h2 class=" group-hover:text-sky-700 text-xl 2xl:text-2xl">{{ page.data.title }}</h2>
+          <p class=" truncate mb-8">{{ page.data.description }}</p>
+          <p class=" text-right ">
+            <span class=" group-hover:underline inline-block py-2 px-6 text-white rounded-lg bg-sky-700">閱讀</span>
+          </p>
+        </div>
+      </article>
+    </a>
   </li>
   {%- endfor -%}
 </ul>

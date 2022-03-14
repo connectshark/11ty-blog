@@ -17,7 +17,10 @@
   {% include 'components/page-title.njk' %}
   
   <div class=" container mx-auto p-6">
-    {{ content | safe }}
+    <article class="max-w-5xl mx-auto">
+      {{ content | safe }}
+    </article>
+    
   </div>
   </main>
   {% include 'components/footer.njk' %}
