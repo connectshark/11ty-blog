@@ -1,0 +1,18 @@
+{% if not author  %}
+{% set authorName = 'sandra' %}
+{% else %}
+{% set authorName = author %}
+{% endif %}
+
+<div class=" bg-white max-w-2xl mx-auto p-5 rounded-xl">
+  <h3>作者</h3>
+  <div class=" flex items-center flex-col md:flex-row justify-center md:justify-around">
+    <figure class="shrink-0 w-20 md:w-40">
+      <img class=" w-full rounded-lg object-fill" src="/assets/{{ authorName }}.jpg" alt="{{ authorName }}">
+    </figure>
+    <div class=" md:w-full text-center md:text-left md:ml-6">
+      <h4 class="capitalize mb-0">{{ authorName }}</h4>
+      <p>一位在生活中努力生活,用文章紀錄有用資訊</p>
+    </div>
+  </div>
+</div>

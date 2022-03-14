@@ -9,7 +9,7 @@ pagination:
   alias: posts_set
 ---
 
-<ul class=" p-4 mb-4 list-none rounded-xl bg-white grid lg:grid-cols-3 grid-cols-1 gap-4">
+<ul class=" p-4 mb-4 list-none rounded-xl bg-white grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
   {%- for page in posts_set -%}
   <li class=" group ">
     <a href="{{ page.url }}" class="block no-underline text-inherit">
@@ -31,7 +31,6 @@ pagination:
   </li>
   {%- endfor -%}
 </ul>
-
 <ul class=" p-0 list-none text-center">
 {%- if pagination.href.first -%}
   <li class=" inline-block mx-2">

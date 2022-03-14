@@ -36,7 +36,6 @@ module.exports = eleventyConfig => {
     breaks: true,
     linkify: true
   })
-  .use(markdownItTableOfContents)
   .use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.ariaHidden({
       placement: "before",
@@ -52,6 +51,7 @@ module.exports = eleventyConfig => {
     }),
     slugify: eleventyConfig.getFilter("slug")
   })
+  .use(markdownItTableOfContents)
   .use(markdownItContainer, 'summary', {
     validate: function (params) {
       return params.trim().match(/^spoiler\s+(.*)$/);
