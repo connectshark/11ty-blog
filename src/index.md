@@ -6,7 +6,7 @@ pagination:
   size: 6
   alias: posts_set
 ---
-<ul class=" p-4 mb-4 list-none rounded-xl bg-white grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+<ul class=" p-4 mb-4 rounded-xl bg-white grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
   {%- for page in posts_set -%}
   <li class=" group ">
     <a href="{{ page.url }}" class="block no-underline text-inherit">
@@ -17,8 +17,8 @@ pagination:
         </figure>
         {%- endif -%}
         <div class=" px-4">
-          <h2 class=" group-hover:text-sky-700 text-xl 2xl:text-2xl">{{ page.data.title }}</h2>
-          <p class=" truncate mb-8">{{ page.data.description }}</p>
+          <h2 class=" group-hover:text-sky-700 py-3 text-xl 2xl:text-2xl">{{ page.data.title }}</h2>
+          <p class=" truncate mb-8 text-base">{{ page.data.description }}</p>
           <p class=" text-right ">
             <span class=" group-hover:underline inline-block py-2 px-6 text-white rounded-lg bg-sky-700">閱讀</span>
           </p>
