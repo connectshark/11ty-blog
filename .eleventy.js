@@ -37,21 +37,15 @@ module.exports = eleventyConfig => {
     linkify: true
   })
   .use(markdownItAnchor, {
+    level: [2,3,4],
     permalink: markdownItAnchor.permalink.ariaHidden({
-      placement: "before",
-      class: "direct-link",
-      space: false,
-      level: [2,3,4],
-      slugify: (str) =>
-        slugify(str, {
-          lower: true,
-          strict: true,
-          remove: /["]/g,
-        })
-    }),
-    slugify: eleventyConfig.getFilter("slug")
+      placement: 'before',
+      space: false
+    })
   })
-  .use(markdownItTableOfContents)
+  .use(markdownItTableOfContents, {
+    includeLevel: [1, 2, 3, 4]
+  })
   .use(markdownItContainer, 'summary', {
     validate: function (params) {
       return params.trim().match(/^spoiler\s+(.*)$/);

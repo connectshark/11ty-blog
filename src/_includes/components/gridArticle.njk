@@ -1,0 +1,22 @@
+<ul class=" p-4 mb-4 rounded-xl bg-white grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+  {%- for page in posts_set -%}
+  <li class=" group ">
+    <a href="{{ page.url }}" class="block no-underline text-inherit">
+      <article class="p-6 rounded-lg bg-white transition-colors group-hover:bg-amber-200 border group-hover:border-amber-200">
+        {%- if page.data.cover -%}
+        <figure>
+          <img loading="lazy" class=" w-full mx-auto rounded-xl object-cover" src="{{ page.data.cover }}" alt="{{ page.title }}">
+        </figure>
+        {%- endif -%}
+        <div class=" px-4">
+          <h2 class=" group-hover:text-sky-700 py-3 text-xl 2xl:text-2xl">{{ page.data.title }}</h2>
+          <p class=" truncate mb-8 text-base">{{ page.data.description }}</p>
+          <p class=" text-right ">
+            <span class=" group-hover:underline inline-block py-2 px-6 text-white rounded-lg bg-sky-700">閱讀</span>
+          </p>
+        </div>
+      </article>
+    </a>
+  </li>
+  {%- endfor -%}
+</ul>
