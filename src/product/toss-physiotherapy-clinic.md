@@ -40,10 +40,10 @@ date: 2022-01-26
 
 ### 用Line直接預約治療時間
 
-直接加入他們的[**Line官方帳號**](https://page.line.me/?accountId=352esfpa)，私訊可配合的時間，馬上就有客服聯繫預約的相關事宜，大致上就是確定一下哪些時段是治療師可配合的時間，還有提醒一下記得準時抵達等等
+直接加入他們的<a href="https://page.line.me/?accountId=352esfpa" target="_blank">Line官方帳號</a>，私訊可配合的時間，馬上就有客服聯繫預約的相關事宜，大致上就是確定一下哪些時段是治療師可配合的時間，還有提醒一下記得準時抵達等等
 
 :::info 提醒
-透視物理治療診所[**Line官方帳號**](https://page.line.me/?accountId=352esfpa)，可以直接從官方帳號預約看診以及查看診所營業時間
+透視物理治療診所<a href="https://page.line.me/?accountId=352esfpa" target="_blank">Line官方帳號</a>，可以直接從官方帳號預約看診以及查看診所營業時間
 :::
 ### 指定老師治療
 
@@ -181,7 +181,7 @@ date: 2022-01-26
 ### 透視物理治療診所預約的方式有哪些?
 
 :::warning 重要
-透視物理治療診所[**Line官方帳號**](https://page.line.me/?accountId=352esfpa)，可以直接從官方帳號預約看診以及查看診所營業時間
+透視物理治療診所<a href="https://page.line.me/?accountId=352esfpa" target="_blank">Line官方帳號</a>，可以直接從官方帳號預約看診以及查看診所營業時間
 :::
 
 透視物理治療診所現在有提供多種方式預約，主要為以下三種方式預約
@@ -189,4 +189,4 @@ date: 2022-01-26
 2. FB粉絲專頁
 3. 直接電話聯繫
 
-其中主要透過[**Line官方帳號**](https://page.line.me/?accountId=352esfpa)的方式預約最為快速，點擊連結加入好友以後直接私訊可配合的診療時間，即可以直接開始預約
+其中主要透過<a href="https://page.line.me/?accountId=352esfpa" target="_blank">Line官方帳號</a>的方式預約最為快速，點擊連結加入好友以後直接私訊可配合的診療時間，即可以直接開始預約

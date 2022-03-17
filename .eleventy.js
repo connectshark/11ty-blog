@@ -6,8 +6,6 @@ const markdownItTableOfContents = require("markdown-it-table-of-contents")
 const pluginNavigation = require('@11ty/eleventy-navigation')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const slugify = require('slugify')
-const now = String(Date.now())
 const tagController = require('./src/_11ty/getTagList')
 
 module.exports = eleventyConfig => {
@@ -15,11 +13,7 @@ module.exports = eleventyConfig => {
 
 
   eleventyConfig.addShortcode('version', function () {
-    return now
-  })
-
-  eleventyConfig.addFilter('postDate', dateObject => {
-    return dateObject
+    return String(Date.now())
   })
 
   eleventyConfig.addPassthroughCopy('src/assets')
@@ -37,11 +31,7 @@ module.exports = eleventyConfig => {
     linkify: true
   })
   .use(markdownItAnchor, {
-    level: [2,3,4],
-    permalink: markdownItAnchor.permalink.ariaHidden({
-      placement: 'before',
-      space: false
-    })
+    level: [2,3,4]
   })
   .use(markdownItTableOfContents, {
     includeLevel: [1, 2, 3, 4]

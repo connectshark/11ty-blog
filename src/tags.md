@@ -1,16 +1,22 @@
 ---
-layout: 'layouts/index.njk'
 pagination:
   data: collections
   size: 1
   alias: tag
-permalink: /tags/{{ tag }}/
+  filter:
+    - all
+    - nav
+    - post
+    - posts
+    - tagList
+  addAllPagesToCollections: true
+layout: layouts/index.njk
+eleventyComputed:
+  title: Tagged “{{ tag }}”
+permalink: /tags/{{ tag | slug }}/
 ---
-<h1>Tagged “{{ tag }}”</h1>
+{% set posts_set = collections[ tag ] %}
 
-<ol>
-{% set taglist = collections[ tag ] %}
-{% for post in taglist | reverse %}
-  <li><a href="{{ post.url | url }}">{{ post.data.title }}</a></li>
-{% endfor %}
-</ol>
+{% include 'components/gridArticle.njk' %}
+
+{% include 'components/pagination.njk' %}
