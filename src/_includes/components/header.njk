@@ -21,8 +21,8 @@
       </span>
       
     </label>
-    <ul class="hidden list-none nav md:block absolute md:static top-full left-0 py-4 px-6 md:py-2 md:px-2 bg-indigo-50 md:bg-transparent w-full md:w-auto">
-      {%- for item in category -%}
+    <ul class="hidden nav md:block absolute md:static top-full left-0 py-4 px-6 md:py-2 md:px-2 bg-indigo-50 md:bg-transparent w-full md:w-auto">
+      {%- for item in categorySet -%}
       <a class="text-sky-400 no-underline hover:underline hover:opacity-80 transition-opacity block md:inline-block align-middle md:mx-2 p-2 md:p-0"
         href="{{ item.url }}"
       >

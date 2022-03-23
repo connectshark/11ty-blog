@@ -9,6 +9,9 @@ module.exports = function(collection) {
           case "nav":
           case "post":
           case "posts":
+          case "financial":
+          case "product":
+          case "foods":
             return false
         }
         return true

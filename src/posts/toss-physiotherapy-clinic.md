@@ -9,9 +9,11 @@ meta:
     content: 中山區物理治療診所 - 治療過程經驗分享 - 透視物理治療診所
   - property: og:description
     content: 大部分的人可能都會想說休息一下就好，但如果變成長期疼痛，可能就會嚴重到要去骨科或復健科檢查，但是醫生常常都是給止痛藥或肌肉鬆弛劑，其實都沒有對根源改善
-author: nosegates
+author: sandra
+category: product
 tags:
-  - iphone
+  - product
+  - 推薦
 date: 2022-01-26
 ---
 
